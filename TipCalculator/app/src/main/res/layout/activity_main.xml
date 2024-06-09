@@ -35,6 +35,7 @@
                 android:layout_width="16dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginStart="15dp"
                 android:background="@color/material_dynamic_tertiary99"
                 android:ems="10"
                 android:gravity="center"
@@ -50,7 +51,8 @@
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -68,7 +70,9 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
+                android:layout_marginStart="15dp"
                 android:text="24%"
+                android:textColor="@color/black"
                 android:textSize="22sp" />
 
             <SeekBar
@@ -78,7 +82,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
-                android:background="@color/material_dynamic_tertiary99" />
+                android:background="@color/material_dynamic_tertiary99"
+                android:outlineAmbientShadowColor="@color/design_default_color_secondary"
+                android:outlineSpotShadowColor="@color/design_default_color_secondary" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,14 +100,19 @@
                 android:background="@color/material_dynamic_tertiary99"
                 android:gravity="center"
                 android:text="Tip"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="262dp"
-                android:layout_height="wrap_content"
+                android:layout_width="159dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="80dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="24.00"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -116,14 +127,19 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Total"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/black"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="249dp"
-                android:layout_height="wrap_content"
+                android:layout_width="144dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="80dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="100.00"
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 
