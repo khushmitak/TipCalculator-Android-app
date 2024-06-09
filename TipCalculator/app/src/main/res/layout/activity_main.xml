@@ -44,13 +44,14 @@
                 android:textSize="30sp" />
 
             <EditText
-                android:id="@+id/editTextNumberDecimal2"
+                android:id="@+id/billAmountID"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
                 android:ems="10"
+                android:hint="Bill Amount"
                 android:inputType="numberDecimal"
                 android:textSize="20sp" />
 
@@ -61,28 +62,29 @@
             android:layout_height="99dp"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editTextText2"
+            <TextView
+                android:id="@+id/tipPercentageLabel"
                 android:layout_width="59dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_tertiary99"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="text"
-                android:layout_marginStart="15dp"
-                android:text="24%"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                tools:text="24%" />
 
             <SeekBar
-                android:id="@+id/seekBar"
+                android:id="@+id/seekBarForTip"
                 android:layout_width="198dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_tertiary99"
+                android:max="30"
                 android:outlineAmbientShadowColor="@color/design_default_color_secondary"
                 android:outlineSpotShadowColor="@color/design_default_color_secondary" />
         </LinearLayout>
@@ -93,7 +95,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tipText"
                 android:layout_width="23dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -105,14 +107,14 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tipAmount"
                 android:layout_width="159dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
-                android:text="24.00"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="24.00" />
         </LinearLayout>
 
         <LinearLayout
@@ -121,7 +123,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/totalText"
                 android:layout_width="9dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -132,14 +134,14 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/displayBillAmount"
                 android:layout_width="144dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
-                android:text="100.00"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="100.00" />
         </LinearLayout>
     </LinearLayout>
 
