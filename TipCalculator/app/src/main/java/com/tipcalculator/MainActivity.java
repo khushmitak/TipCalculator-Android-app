@@ -25,6 +25,25 @@ public class MainActivity extends AppCompatActivity {
         tipPercentageLabel = (TextView) findViewById(R.id.tipPercentageLabel);
         tipAmount = (TextView) findViewById(R.id.tipAmount);
         displayBillAmount = (TextView) findViewById(R.id.displayBillAmount);
+
+        seekBarForTip.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()) {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+
+        }
     }
+
 
 }
