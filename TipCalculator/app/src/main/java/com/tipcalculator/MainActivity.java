@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tipPercentageLabel;
     private TextView tipAmount;
     private TextView displayBillAmount;
+    private boolean showToast = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
        tipAmount = findViewById(R.id.tipAmount);
        displayBillAmount = findViewById(R.id.displayBillAmount);
 
-        seekBarForTip.setMax(29);
+        seekBarForTip.setMax(49);
         seekBarForTip.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -76,21 +78,33 @@ public class MainActivity extends AppCompatActivity {
         if (!billAmountStr.isEmpty()) {
             try {
                 double billAmount = Double.parseDouble(billAmountStr);
-                int tipPercentage = seekBarForTip.getProgress() + 1; // Progress from 0 to 29 maps to 1 to 30
-                double tipAmountValue = CalculateTip.calculateTip(billAmount, tipPercentage);
-                double totalAmount = CalculateTip.calculateTotalAmount(billAmount, tipAmountValue);
+                // Validate the bill amount
+                if (billAmount < 1 || billAmount > 1_000_000) {
+                    if (showToast) {
+                        Toast.makeText(MainActivity.this, "Bill amount must be between $1 and $1,000,000", Toast.LENGTH_SHORT).show();
+                        showToast = false; // Prevent showing Toast again until input changes
+                    }
+                    tipAmount.setText("");
+                    displayBillAmount.setText("");
+                } else {
+                    // Reset showToast flag when input is valid
+                    showToast = true;
 
-                tipAmount.setText(String.format("$%.2f", tipAmountValue));
-                displayBillAmount.setText(String.format("$%.2f", totalAmount));
+                    int tipPercentage = seekBarForTip.getProgress() + 1; // Progress from 0 to 49 maps to 1 to 50
+                    double tipAmountValue = CalculateTip.calculateTip(billAmount, tipPercentage);
+                    double totalAmount = CalculateTip.calculateTotalAmount(billAmount, tipAmountValue);
+
+                    tipAmount.setText(String.format("$%.2f", tipAmountValue));
+                    displayBillAmount.setText(String.format("$%.2f", totalAmount));
+                }
             } catch (NumberFormatException e) {
                 tipAmount.setText("");
                 displayBillAmount.setText("");
             }
-        }
-        else { // if no bill is provided, return nothing for tip and total
+        } else {
+            // If no bill amount is provided, return nothing for tip and total
             tipAmount.setText("");
             displayBillAmount.setText("");
         }
     }
-
 }
