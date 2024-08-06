@@ -3,6 +3,7 @@ package com.tipcalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -18,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView tipPercentageLabel;
     private TextView tipAmount;
     private TextView displayBillAmount;
-    private boolean showToast = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,16 +80,14 @@ public class MainActivity extends AppCompatActivity {
                 double billAmount = Double.parseDouble(billAmountStr);
                 // Validate the bill amount
                 if (billAmount < 1 || billAmount > 1_000_000) {
-                    if (showToast) {
-                        Toast.makeText(MainActivity.this, "Bill amount must be between $1 and $1,000,000", Toast.LENGTH_SHORT).show();
-                        showToast = false; // Prevent showing Toast again until input changes
-                    }
+                    Toast.makeText(MainActivity.this, "Bill amount must be between $1 and $1,000,000. TRY AGAIN", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(intent);
+
                     tipAmount.setText("");
                     displayBillAmount.setText("");
-                } else {
-                    // Reset showToast flag when input is valid
-                    showToast = true;
-
+                }
+                else {
                     int tipPercentage = seekBarForTip.getProgress() + 1; // Progress from 0 to 49 maps to 1 to 50
                     double tipAmountValue = CalculateTip.calculateTip(billAmount, tipPercentage);
                     double totalAmount = CalculateTip.calculateTotalAmount(billAmount, tipAmountValue);
