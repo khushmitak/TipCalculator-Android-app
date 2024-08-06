@@ -19,9 +19,9 @@
             android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="86dp"
-            android:background="#8CDCC0"
+            android:background="#D18B74"
             android:gravity="center"
-            android:text="Tip Calculator"
+            android:text="@string/tip_calculator"
             android:textAlignment="center"
             android:textSize="40sp" />
 
@@ -39,7 +39,7 @@
                 android:background="@color/material_dynamic_tertiary99"
                 android:ems="10"
                 android:gravity="center"
-                android:text="Base"
+                android:text="@string/base"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
@@ -51,7 +51,7 @@
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Bill Amount"
+                android:hint="@string/bill_amount"
                 android:inputType="numberDecimal"
                 android:textSize="20sp" />
 
@@ -71,7 +71,6 @@
                 android:background="@color/material_dynamic_tertiary99"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="text"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 tools:text="24%" />
@@ -101,7 +100,7 @@
                 android:layout_weight="1"
                 android:background="@color/material_dynamic_tertiary99"
                 android:gravity="center"
-                android:text="Tip"
+                android:text="@string/tip"
                 android:layout_marginStart="15dp"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
@@ -128,7 +127,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Total"
+                android:text="@string/total"
                 android:layout_marginStart="15dp"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
