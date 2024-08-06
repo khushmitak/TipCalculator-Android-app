@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/material_dynamic_tertiary99"
+        android:background="#F1F1F1"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
@@ -34,9 +34,9 @@
                 android:id="@+id/baseInputText"
                 android:layout_width="16dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
-                android:background="@color/material_dynamic_tertiary99"
+                android:layout_weight="1"
+                android:background="#F1F1F1"
                 android:ems="10"
                 android:gravity="center"
                 android:text="@string/base"
@@ -68,7 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="15dp"
                 android:layout_weight="1"
-                android:background="@color/material_dynamic_tertiary99"
+                android:background="#F1F1F1"
                 android:ems="10"
                 android:gravity="center"
                 android:textColor="@color/black"
@@ -82,10 +82,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="80dp"
                 android:layout_weight="1"
-                android:background="@color/material_dynamic_tertiary99"
-                android:max="30"
-                android:outlineAmbientShadowColor="@color/design_default_color_secondary"
-                android:outlineSpotShadowColor="@color/design_default_color_secondary" />
+                android:background="#F1F1F1"
+                android:max="30" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,11 +95,11 @@
                 android:id="@+id/tipText"
                 android:layout_width="23dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
                 android:layout_weight="1"
-                android:background="@color/material_dynamic_tertiary99"
+                android:background="#F1F1F1"
                 android:gravity="center"
                 android:text="@string/tip"
-                android:layout_marginStart="15dp"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
@@ -125,10 +123,10 @@
                 android:id="@+id/totalText"
                 android:layout_width="9dp"
                 android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/total"
-                android:layout_marginStart="15dp"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
